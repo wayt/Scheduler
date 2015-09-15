@@ -70,7 +70,7 @@ func main() {
 			for {
 				time.Sleep(1 * time.Second)
 
-				t := time.Now()
+				t := time.Now().UTC()
 				timeStr := strconv.FormatInt(t.Unix(), 10)
 
 				tasks, err := redisCli.ZRangeByScore(*scheduledTasksKey, redis.ZRangeByScore{
